@@ -1,15 +1,27 @@
 import './App.css'
+import {
+  Navigate,
+  Route,
+  Routes
+} from "react-router-dom";
+import News from './pages/News';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
 
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <h1 className="text-3xl font-bold text-blue-600">
-        Install & Setup Vite + React + Typescript + Tailwind CSS 3
-      </h1>
-    </div>
-  );
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Navigate to="/news" />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/blog" element={<h1>Hello this is my blog</h1>} />
+        <Route path="/myPage" element={<h1>Hi this is my page</h1>} />
+      </Routes>
+    </>
+
+  ); 
 }
 
 
