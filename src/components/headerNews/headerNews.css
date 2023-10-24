@@ -10,7 +10,6 @@
 
 /* contentContainerStyle */
 .content-container {
-  background: white;
   padding: 5px;
   max-width: 900px;
   height: 150px;
@@ -26,8 +25,29 @@
 }
 .news-block {
   width: 200px;
-  background-color: black;
   margin-left: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.news-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Затемнення кольору (чорний з прозорістю) */
+  z-index: 1;
+}
+
+.news-block p {
+  position: relative;
+  z-index: 2;
+  color: white;
 }
 
 .overlay {
@@ -38,4 +58,10 @@
   top: 0;
   left: 0;
   z-index: 0;
+}
+
+.chosen-block {
+  border-top: 5px solid rgb(0, 246, 0);
+  position: relative;
+  z-index: 2;
 }
